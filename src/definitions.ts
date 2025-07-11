@@ -46,7 +46,8 @@ export interface WebViewOptions {
   closeButtonText: string;
   /** Sets the position to display the Toolbar on the Web View. */
   toolbarPosition: ToolbarPosition;
-
+  /** Sets the theme of the Web View (DARK | LIGHT | SYSTEM). Defaults to SYSTEM.  Android only*/
+  theme?: ThemeMode;
   /** Displays the navigation buttons. */
   showNavigationButtons: boolean;
   /** Swaps the positions of the navigation buttons and the close button. */
@@ -90,6 +91,12 @@ export interface AndroidWebViewOptions {
   pauseMedia: boolean;
 }
 
+export enum ThemeMode {
+  LIGHT,
+  DARK,
+  SYSTEM
+}
+
 export enum DismissStyle {
   CLOSE,
   CANCEL,
@@ -97,6 +104,9 @@ export enum DismissStyle {
 }
 
 export interface SystemBrowserOptions {
+  /** Sets the theme of the System Browser. */
+  theme?: ThemeMode;
+
   /** Android-specific System Browser options. */
   android: AndroidSystemBrowserOptions;
   /** iOS-specific System Browser options. */

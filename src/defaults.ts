@@ -5,6 +5,7 @@ import {
   AndroidWebViewOptions,
   DismissStyle,
   SystemBrowserOptions,
+  ThemeMode,
   ToolbarPosition,
   WebViewOptions,
   iOSAnimation,
@@ -41,6 +42,7 @@ export const DefaultWebViewOptions: WebViewOptions = {
 
   closeButtonText: 'Close',
   toolbarPosition: ToolbarPosition.TOP,
+  theme: ThemeMode.SYSTEM,
 
   showNavigationButtons: true,
   leftToRight: false,
@@ -68,6 +70,7 @@ export const DefaultAndroidSystemBrowserOptions: AndroidSystemBrowserOptions = {
 };
 
 export const DefaultSystemBrowserOptions: SystemBrowserOptions = {
+  theme: ThemeMode.SYSTEM,
   android: DefaultAndroidSystemBrowserOptions,
   iOS: DefaultiOSSystemBrowserOptions,
 };

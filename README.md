@@ -224,6 +224,7 @@ Defines the options for opening a URL in the web view.
 | **`mediaPlaybackRequiresUserAction`** | <code>boolean</code>                                                    | Prevents HTML5 audio or video from auto-playing.                                                        |
 | **`closeButtonText`**                 | <code>string</code>                                                     | Sets the text to display on the Close button on the Web View.                                           |
 | **`toolbarPosition`**                 | <code><a href="#toolbarposition">ToolbarPosition</a></code>             | Sets the position to display the Toolbar on the Web View.                                               |
+| **`theme`**                           | <code><a href="#thememode">ThemeMode</a></code>                         | Sets the theme of the Web View. Defaults to system.                                                     |
 | **`showNavigationButtons`**           | <code>boolean</code>                                                    | Displays the navigation buttons.                                                                        |
 | **`leftToRight`**                     | <code>boolean</code>                                                    | Swaps the positions of the navigation buttons and the close button.                                     |
 | **`customWebViewUserAgent`**          | <code>string \| null</code>                                             | Sets a custom user agent to open the Web View with. If empty or not set, the parameter will be ignored. |
@@ -266,6 +267,7 @@ Defines the options for opening a URL in the system browser.
 
 | Prop          | Type                                                                                | Description                              |
 | ------------- | ----------------------------------------------------------------------------------- | ---------------------------------------- |
+| **`theme`**   | <code><a href="#thememode">ThemeMode</a></code>                                     | Sets the theme of the System Browser.    |
 | **`android`** | <code><a href="#androidsystembrowseroptions">AndroidSystemBrowserOptions</a></code> | Android-specific System Browser options. |
 | **`iOS`**     | <code><a href="#iossystembrowseroptions">iOSSystemBrowserOptions</a></code>         | iOS-specific System Browser options.     |
 
@@ -335,6 +337,15 @@ Defines the data for the 'browserPageNavigationCompleted' event.
 | ------------ |
 | **`TOP`**    |
 | **`BOTTOM`** |
+
+
+#### ThemeMode
+
+| Members      |
+| ------------ |
+| **`LIGHT`**  |
+| **`DARK`**   |
+| **`SYSTEM`** |
 
 
 #### iOSViewStyle

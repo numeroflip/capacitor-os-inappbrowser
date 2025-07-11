@@ -13,6 +13,7 @@ import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimati
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABCustomTabsOptions
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABThemeMode
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABViewStyle
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABCustomTabsRouterAdapter
@@ -165,6 +166,9 @@ class InAppBrowserPlugin : Plugin() {
                 toolbarPosition = it.getInteger("toolbarPosition")?.let { ordinal ->
                     OSIABToolbarPosition.entries[ordinal]
                 } ?: OSIABToolbarPosition.TOP,
+                theme = it.getInteger("theme")?.let { theme ->
+                    OSIABThemeMode.entries[theme]
+                } ?: OSIABThemeMode.SYSTEM,
                 leftToRight = it.getBoolean("leftToRight", false) ?: false,
                 showNavigationButtons = it.getBoolean("showNavigationButtons", false) ?: false,
                 allowZoom = androidOptions?.getBoolean("allowZoom", true) ?: true,
@@ -192,6 +196,9 @@ class InAppBrowserPlugin : Plugin() {
                     isFixed = it.getBoolean("isFixed", false) ?: false
                 )
             },
+            theme = options.getInteger("theme")?.let { theme ->
+                OSIABThemeMode.entries[theme]
+            } ?: OSIABThemeMode.SYSTEM,
             startAnimation = optionsJson?.getInteger("startAnimation")?.let { OSIABAnimation.entries[it] }
                 ?: OSIABAnimation.FADE_IN,
             exitAnimation = optionsJson?.getInteger("exitAnimation")?.let { OSIABAnimation.entries[it] } ?: OSIABAnimation.FADE_OUT

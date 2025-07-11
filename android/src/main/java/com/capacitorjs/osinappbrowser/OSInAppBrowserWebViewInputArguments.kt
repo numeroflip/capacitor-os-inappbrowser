@@ -11,6 +11,7 @@ data class OSInAppBrowserWebViewInputArguments(
     @SerializedName("mediaPlaybackRequiresUserAction") val mediaPlaybackRequiresUserAction: Boolean?,
     @SerializedName("closeButtonText") val closeButtonText: String?,
     @SerializedName("toolbarPosition") val toolbarPosition: OSIABToolbarPosition?,
+    @SerializedName("theme") val theme: OSIABThemeMode?,
     @SerializedName("leftToRight") val leftToRight: Boolean?,
     @SerializedName("showNavigationButtons") val showNavigationButtons: Boolean?,
     @SerializedName("customWebViewUserAgent") val customWebViewUserAgent: String?,

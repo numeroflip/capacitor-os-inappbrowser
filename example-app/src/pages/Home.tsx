@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation, BrowserPageNavigationCompletedEventData } from '@capacitor/inappbrowser';
+import { InAppBrowser, ThemeMode, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation, BrowserPageNavigationCompletedEventData } from '@capacitor/inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -36,6 +36,7 @@ const Home: React.FC = () => {
     InAppBrowser.openInSystemBrowser({
       url: "https://www.asymco.com/",
       options: {
+        theme: ThemeMode.LIGHT,
         android: {
           showTitle: true,
           hideToolbarOnScroll: true,
@@ -58,6 +59,7 @@ const Home: React.FC = () => {
     });
   }
 
+
   const openInWebViewWithDefaults = () => {
     InAppBrowser.openInWebView({
       url: "https://www.google.com",
@@ -77,6 +79,7 @@ const Home: React.FC = () => {
         closeButtonText: "Done",
         toolbarPosition: ToolbarPosition.BOTTOM,
         showNavigationButtons: false,
+        theme: ThemeMode.LIGHT,
         leftToRight: true,
         android: DefaultAndroidWebViewOptions,
         customWebViewUserAgent: `${window.navigator.userAgent} SepcialUser`,
@@ -104,6 +107,7 @@ const Home: React.FC = () => {
         mediaPlaybackRequiresUserAction: false,
         closeButtonText: "Done",
         toolbarPosition: ToolbarPosition.TOP,
+        theme: ThemeMode.DARK,
         showNavigationButtons: true,
         leftToRight: false,
         android: {
