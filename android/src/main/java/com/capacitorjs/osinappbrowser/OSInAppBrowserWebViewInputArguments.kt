@@ -2,6 +2,8 @@ package com.capacitorjs.osinappbrowser
 
 import com.google.gson.annotations.SerializedName
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABThemeMode
+
 
 data class OSInAppBrowserWebViewInputArguments(
     @SerializedName("showURL") val showURL: Boolean?,
